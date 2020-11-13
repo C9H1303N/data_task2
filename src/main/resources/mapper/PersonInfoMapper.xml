@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.datatask2.dao.PersonInfoMapper">
+    <resultMap id="Person" type="com.example.datatask2.entity.Person">
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="status" property="status" jdbcType="INTEGER"/>
+        <result column="point" property="point" jdbcType="INTEGER"/>
+    </resultMap>
+    <select id="findPersonInfoById" resultMap="Person">
+        select *
+        from person
+        where id = #{id}
+    </select>
+
+    <update id="updatePersonInfo">
+        update person
+        set status = #{person.status}, point = #{person.point}
+        where id = #{person.id}
+    </update>
+
+    <insert id="transaction">
+        insert into transaction
+        (trading_no, seller_id, buyer_id, plate_no) values (#{trading_no}, #{seller_id}, #{buyer_id}, #{plate_no})
+    </insert>
+</mapper>

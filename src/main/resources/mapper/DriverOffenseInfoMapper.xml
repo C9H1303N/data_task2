@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.datatask2.dao.DriverOffenseInfoMapper">
+    <resultMap id="OffenseInfo" type="com.example.datatask2.entity.OffenseInfo">
+        <id column="ticket_no" property="ticketNo" jdbcType="VARCHAR"/>
+        <result column="time" property="time" jdbcType="INTEGER"/>
+        <result column="location" property="location" jdbcType="TIMESTAMP"/>
+        <result column="plate_no" property="plateNo" jdbcType="VARCHAR"/>
+    </resultMap>
+    <select id="findDriverOffenseById" resultMap="OffenseInfo">
+        select a.ticket_no,b.time,b.location,c.plate_no
+        from ticket a
+        left join offense b
+        on a.offense_no = b.offense_no
+        left join make_offense c
+        on a.offense_no = c.offense_no
+        where driver_id = #{id}
+    </select>
+    
+    <insert id="addTicket" >
+        insert into ticket
+        (ticket_no, driver_id, claim_time, offense_no) values
+        (#{ticket_no},#{id},#{time},#{offense_no})
+    </insert>
+
+    <update id="claimOffense">
+        update offense
+        set is_claimed = 1
+        where offense_no = #{no}
+    </update>
+    
+    <insert id="addTicketDetail">
+        insert into ticket_detail
+        (detail_no, point, fine, detention, ticket_no) values
+        (#{detail_no},#{point},#{detention},#{ticket_no})
+    </insert>
+</mapper>

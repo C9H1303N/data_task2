@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/data_task2?serverTimezone=GMT%2B8&useSSL=false
+    username: root
+    password: 991016
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.dataspace.entity
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

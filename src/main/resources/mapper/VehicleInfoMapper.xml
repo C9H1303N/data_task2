@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.datatask2.dao.VehicleInfoMapper">
+    <resultMap id="Vehicle" type="com.example.datatask2.entity.Vehicle">
+        <id column="plate_no" property="plateNo" jdbcType="VARCHAR"/>
+        <result column="owner_id" property="ownerId" jdbcType="VARCHAR"/>
+        <result column="color" property="color" jdbcType="INTEGER"/>
+    </resultMap>
+    <select id="findVehicleInfoByPlateNo" resultMap="Vehicle">
+        select *
+        from vehicle
+        where plate_no = #{no}
+    </select>
+
+    <select id="findVehicleById">
+        select *
+        from vehicle
+        where owner_id = #{id}
+    </select>
+
+    <insert id="addVehicle">
+        insert into vehicle
+        (plate_no, owner_id, color) values
+        (#{plate_no},#{owner_id},#{color})
+    </insert>
+
+    <delete id="deleteVehicle">
+        delete from vehicle
+        where plate_no = #{plate_no}
+    </delete>
+</mapper>
