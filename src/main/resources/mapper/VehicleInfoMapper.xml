@@ -12,7 +12,7 @@
         where plate_no = #{no}
     </select>
 
-    <select id="findVehicleById">
+    <select id="findVehicleById" resultMap="Vehicle">
         select *
         from vehicle
         where owner_id = #{id}

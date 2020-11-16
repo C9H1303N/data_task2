@@ -20,4 +20,10 @@
         (offense_no, is_claimed, time, location) values
         (#{no}, #{is_claimed}, #{time}, #{location})
     </insert>
+
+    <insert id="addMakeOffense">
+        insert into make_offense
+        (offense_no,plate_no) values
+        (#{offense_no},#{plate_no})
+    </insert>
 </mapper>

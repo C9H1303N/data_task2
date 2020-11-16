@@ -30,7 +30,7 @@ class Datatask2ApplicationTests {
     @Autowired
     private DriverOffenseInfoMapper driverOffenseInfoMapper;
 
-
+/*
     @Test
     void contextLoads() {
     }
@@ -39,7 +39,7 @@ class Datatask2ApplicationTests {
     void testve() {
         Vehicle vehicle;
         vehicle = vehicleInfoMapper.findVehicleInfoByPlateNo("qwe");
-        System.out.println(vehicle.getOwnerId());
+        System.out.println(vehicle);
     }
 
     @Test
@@ -63,7 +63,7 @@ class Datatask2ApplicationTests {
         System.out.println(offenseInfo);
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         String date = df.format(new Date());// new Date()为获取当前系统时间，也可使用当前时间戳
-        driverOffenseInfoMapper.addTicket("1",date,"3","4");
+//        driverOffenseInfoMapper.addTicket("1",date,"3","4");
     }
 
     @Test
@@ -77,5 +77,5 @@ class Datatask2ApplicationTests {
         String date = df.format(new Date());// new Date()为获取当前系统时间，也可使用当前时间戳
         offenseInfoMapper.addOffense(no,date,"location",0);
         System.out.println("true");
-    }
+    }*/
 }

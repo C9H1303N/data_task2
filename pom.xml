@@ -76,8 +76,18 @@
             <resource>
                 <directory>src/main/java</directory>
                 <includes>
+                    <include>**/*.yml</include>
                     <include>**/*.xml</include>
                 </includes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.yml</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
             </resource>
         </resources>
         <plugins>

@@ -16,6 +16,15 @@ public class Vehicle {
     public Vehicle() {
     }
 
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "plateNo='" + plateNo + '\'' +
+                ", ownerId='" + ownerId + '\'' +
+                ", color=" + color +
+                '}';
+    }
+
     public String getPlate_no() {
         return plateNo;
     }

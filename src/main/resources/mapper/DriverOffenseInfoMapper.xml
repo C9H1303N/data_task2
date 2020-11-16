@@ -32,6 +32,6 @@
     <insert id="addTicketDetail">
         insert into ticket_detail
         (detail_no, point, fine, detention, ticket_no) values
-        (#{detail_no},#{point},#{detention},#{ticket_no})
+        (#{detail_no},#{point},#{fine},#{detention},#{ticket_no})
     </insert>
 </mapper>

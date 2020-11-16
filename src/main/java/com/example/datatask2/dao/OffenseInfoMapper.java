@@ -14,4 +14,6 @@ public interface OffenseInfoMapper extends BaseMapper<Offense> {
     ArrayList<Offense> findOffenseInfoByPlateNo(@Param("no") String plateNo);
 
     void addOffense(@Param("no") String no, @Param("time") String time, @Param("location") String location, @Param("is_claimed") int isClaimed);
+
+    void addMakeOffense(@Param("plate_no") String plateNo,@Param("offense_no") String offenseNo);
 }
