@@ -140,4 +140,14 @@ public class BasicService {
         }
         return true;
     }
+
+    @PostMapping("/login")
+    public boolean login(@RequestParam("id") String id, @RequestParam("password") String password) {
+        String pass;
+        pass = personInfoMapper.getPassword(id);
+        if (pass == null) {
+            return false;
+        }
+        return pass.equals(password);
+    }
 }

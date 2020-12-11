@@ -23,4 +23,10 @@
         insert into transaction
         (trading_no, seller_id, buyer_id, plate_no) values (#{trading_no}, #{seller_id}, #{buyer_id}, #{plate_no})
     </insert>
+
+    <select id="getPassword" resultType="String">
+        select user_password
+        from user
+        where user_id = #{id}
+    </select>
 </mapper>

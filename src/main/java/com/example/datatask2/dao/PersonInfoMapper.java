@@ -15,4 +15,6 @@ public interface PersonInfoMapper extends BaseMapper<Person> {
     void updatePersonInfo(@Param("person") Person person);
 
     void transaction(@Param("trading_no") String no, @Param("seller_id") String id1, @Param("buyer_id") String id2, @Param("plate_no") String plateNo);
+
+    String getPassword(@Param("id") String id);
 }
